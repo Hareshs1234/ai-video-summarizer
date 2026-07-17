@@ -1,13 +1,19 @@
-function Summary(){
+function Summary({ summary, loading }) {
 
-    return(
-
+    return (
         <div>
-            <h2>Summary</h2>
-            <p>This is where the AI generated summary will appear</p>
-        </div>
 
-    )
+            <h2>Summary</h2>
+
+            <p>
+                {loading 
+                    ? "Generating summary..." 
+                    : summary || "Your AI summary will appear here"
+                }
+            </p>
+
+        </div>
+    );
 }
 
 export default Summary;
