@@ -1,19 +1,19 @@
-function KeyPoints(){
+function KeyPoints({ points }) {
 
-    return(
+    return (
         <div>
             <h2>Key Points</h2>
+
             <ul>
-                <li>Main idea of the video</li>
-                <li>Important concepts explained</li>
-                <li>Things to remember</li>
-
+                {points.map((point, index) => (
+                    <li key={index}>
+                        {point}
+                    </li>
+                ))}
             </ul>
+
         </div>
-        
-    )
-
-
-
+    );
 }
+
 export default KeyPoints;

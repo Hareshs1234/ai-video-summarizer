@@ -10,6 +10,14 @@ function App() {
   const [videoURL, setVideoUrl] = useState("");
   const [summary, setSummary] = useState("");
   const [loading, setLoading] = useState(false);
+  const[keyPoints,setKeyPoints] = useState([
+  "React is a frontend library",
+  "Components manage UI",
+  "State stores changing data"
+]);
+  const [transcript, setTranscript] = useState(
+  "This is a fake transcript of the video. The AI will replace this later."
+);
 
   return (
     <div className="app">
@@ -30,8 +38,10 @@ function App() {
           loading={loading}
         />
 
-        <KeyPoints />
-        <Transcript />
+        <KeyPoints points={keyPoints}>
+
+        </KeyPoints>
+        <Transcript transcript={transcript}/>
 
       </div>
 

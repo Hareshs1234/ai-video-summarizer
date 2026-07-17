@@ -1,10 +1,10 @@
-function Transcript(){
+function Transcript({transcript}){
 
     return(
 
         <div>
             <h2>Transcript</h2>
-            <p>The full transcript of the video will appear here</p>
+            <p>{transcript}</p>
         </div>
     )
 
