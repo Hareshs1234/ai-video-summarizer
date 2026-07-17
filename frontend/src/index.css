@@ -109,3 +109,25 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+.app {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.notes-container {
+  margin-top: 40px;
+}
+
+.notes-container div {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
