@@ -18,7 +18,7 @@ function VideoInput({ onVideoSubmit, onGenerate, setLoading, loading }) {
     onVideoSubmit(videoUrl);
 
     setTimeout(() => {
-      onGenerate("This is a fake AI summary of the video.");
+      onGenerate("The summary of the video will appear here");
       setLoading(false);
     }, 2000);
   };
