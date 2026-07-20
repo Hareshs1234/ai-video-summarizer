@@ -7,45 +7,55 @@ import { useState } from 'react';
 
 function App() {
 
-  const [videoURL, setVideoUrl] = useState("");
+  const [VideoUrl, setVideoUrl] = useState("");
   const [summary, setSummary] = useState("");
   const [loading, setLoading] = useState(false);
-  const[keyPoints,setKeyPoints] = useState([
+  const [keyPoints] = useState([
   "React is a frontend library",
   "Components manage UI",
-  "State stores changing data"
+  "State stores changing data",
 ]);
-  const [transcript, setTranscript] = useState(
-  "This is a fake transcript of the video. The AI will replace this later."
-);
+  const [transcript] = useState("");
 
   return (
+
     <div className="app">
+    <div className="headerTop">
+    <h1>AI Video <span>Notes Generator</span></h1>
 
-      <h1>AI Video Notes Generator</h1>
+<p>
+  Paste a YouTube link or upload a video and get AI-generated
+  transcripts, summaries, and key points in seconds.
+</p>
 
+    </div>            
+
+    <div className="videoSection"> 
       <VideoInput
         onVideoSubmit={setVideoUrl}
         onGenerate={setSummary}
         setLoading={setLoading}
         loading = {loading}
       />
+      <p className = "example">Example: <span>https://www.youtube.com/watch?v=dQw4w9WgXcQ</span></p>
+      </div>
+
 
       <div className="notes-container">
-
         <Summary
           summary={summary}
           loading={loading}
         />
 
-        <KeyPoints points={keyPoints}>
+        <KeyPoints points={keyPoints}
+        loading = {loading}>
 
         </KeyPoints>
-        <Transcript transcript={transcript}/>
-
+        <Transcript transcript={transcript}
+        loading = {loading}/>
       </div>
-
     </div>
+
   )
 }
 

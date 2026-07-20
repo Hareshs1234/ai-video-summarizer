@@ -1,55 +1,44 @@
 import { useState } from "react";
+import { Sparkles } from "lucide-react";
 
 function VideoInput({ onVideoSubmit, onGenerate, setLoading, loading }) {
-    
+  const [videoUrl, setVideoUrl] = useState("");
 
+  const handleUrlChange = (event) => {
+    setVideoUrl(event.target.value);
+  };
 
-    const [videoUrl, setVideoUrl] = useState("");
+  const handleGenerate = () => {
+    if (videoUrl.trim() === "") {
+      alert("Please enter a video URL");
+      return;
+    }
 
-    const handleUrlChange = (event) => {
-        setVideoUrl(event.target.value);
-    };
+    setLoading(true);
+    onVideoSubmit(videoUrl);
 
+    setTimeout(() => {
+      onGenerate("This is a fake AI summary of the video.");
+      setLoading(false);
+    }, 2000);
+  };
 
-    const handleGenerate = () => {
+  return (
+    <div className="inputRow">
+      <input
+        type="text"
+        placeholder="Paste YouTube link here..."
+        value={videoUrl}
+        onChange={handleUrlChange}
+      />
 
-        if (videoUrl.trim() === ""){
-            alert("Please enter a video URL");
-            return;
-        }
+      <button onClick={handleGenerate} disabled={loading}>
+    <Sparkles size={20} />
+    {loading ? " Generating" : " Generate Summary"}
+    </button>
 
-        setLoading(true);
-
-        onVideoSubmit(videoUrl);
-
-        setTimeout(() => {
-
-            onGenerate("This is a fake AI summary of the video.");
-
-            setLoading(false);
-
-        }, 2000);
-
-    };
-
-
-    return (
-        <div>
-
-            <input
-                type="text"
-                placeholder="Paste YouTube URL OR drag Video File"
-                value={videoUrl}
-                onChange={handleUrlChange}
-            />
-
-            <button onClick={handleGenerate}
-            disable = {loading}>
-                {loading ? "Generating" : "Generate Summary"}
-            </button>
-
-        </div>
-    );
+    </div>
+  );
 }
 
 export default VideoInput;
