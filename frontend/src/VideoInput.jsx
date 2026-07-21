@@ -25,7 +25,7 @@ function VideoInput({ onVideoSubmit, onGenerate, setLoading, loading, setKeyPoin
 
   try{
     const response = await fetch(
-    "http://127.0.0.1:8001/generate-notes",
+    "https://ai-video-summarizer-1f0h.onrender.com/generate-notes",
     {
         method: "POST",
         headers: {
@@ -36,6 +36,11 @@ function VideoInput({ onVideoSubmit, onGenerate, setLoading, loading, setKeyPoin
         })
     }
 );
+
+if (!response.ok) {
+  throw new Error(`Request failed: ${response.status}`);
+}
+
 const data = await response.json();
 onGenerate(data.summary);
 onVideoSubmit(videoUrl);
