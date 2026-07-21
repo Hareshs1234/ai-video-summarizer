@@ -7,6 +7,12 @@ body{
     font-family:Arial, Helvetica, sans-serif;
 }
 
+.logo{
+    max-width: 150px;
+}
+
+
+
 .headerTop h1{
     font-size:40px;
     font-weight:700;
@@ -69,6 +75,15 @@ body{
 
 .videoSection input:focus{
     border-color:#7C3AED;
+}
+
+.footer {
+    margin-top: 80px;
+    padding: 30px 20px;
+    text-align: center;
+    color: #7f7f93;
+    font-size: 15px;
+    border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 .videoSection button{
@@ -238,4 +253,5 @@ body{
     padding: 0;
     margin: 0;
 }
+
 }

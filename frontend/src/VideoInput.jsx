@@ -47,7 +47,7 @@ setTranscript(data.transcript);
 
 catch (error) {
     console.error(error);
-    alert(error.message);
+    alert("Please make sure the YouTube link is entered correctly and that the video has captions available.");
 }
 finally {
     setLoading(false);

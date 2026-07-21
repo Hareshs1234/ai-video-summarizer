@@ -4,7 +4,7 @@ import Summary from './Summary.jsx'
 import KeyPoints from './KeyPoints.jsx'
 import Transcript from "./Transcript";
 import { useState } from 'react';
-
+import logo from "./assets/logo.png";
 function App() {
 
   const [VideoUrl, setVideoUrl] = useState("");
@@ -18,8 +18,10 @@ function App() {
   const [transcript,setTranscript] = useState("");
 
   return (
+    
 
     <div className="app">
+      <img src={logo} alt="VideoNotes Logo" className="logo" />
     <div className="headerTop">
     <h1>AI Video <span>Notes Generator</span></h1>
 
@@ -56,7 +58,18 @@ function App() {
         <Transcript transcript={transcript}
         loading = {loading}/>
       </div>
+
+      <footer className="footer">
+  <p>© 2026 VideoNotes. Built by Haresh.<br />
+    Powered by React, FastAPI, and OpenAI
+  </p>
+ 
+      </footer>
+
+      
     </div>
+
+    
 
   )
 }
