@@ -10,12 +10,12 @@ function App() {
   const [VideoUrl, setVideoUrl] = useState("");
   const [summary, setSummary] = useState("");
   const [loading, setLoading] = useState(false);
-  const [keyPoints] = useState([
+  const [keyPoints, setKeyPoints] = useState([
   "React is a frontend library",
   "Components manage UI",
   "State stores changing data",
 ]);
-  const [transcript] = useState("");
+  const [transcript,setTranscript] = useState("");
 
   return (
 
@@ -36,6 +36,8 @@ function App() {
         onGenerate={setSummary}
         setLoading={setLoading}
         loading = {loading}
+        setKeyPoints={setKeyPoints}
+        setTranscript={setTranscript}
       />
       <p className = "example">Example: <span>https://www.youtube.com/watch?v=dQw4w9WgXcQ</span></p>
       </div>
