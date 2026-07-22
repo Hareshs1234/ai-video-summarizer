@@ -61,7 +61,7 @@ function App() {
 
       <footer className="footer">
   <p>© 2026 VideoNotes. Built by Haresh.<br />
-    Powered by React, FastAPI, and OpenAI
+    Powered by React, FastAPI,Supadata, and OpenAI
   </p>
  
       </footer>
