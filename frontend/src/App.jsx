@@ -4,7 +4,7 @@ import Summary from './Summary.jsx'
 import KeyPoints from './KeyPoints.jsx'
 import Transcript from "./Transcript";
 import { useState } from 'react';
-import logo from "./assets/logo.png";
+import logo from "./assets/Logo.png";
 function App() {
 
   const [VideoUrl, setVideoUrl] = useState("");
